@@ -179,7 +179,7 @@ export default function Footer() {
                 LinkedIn
               </a>
               <a href="https://instagram.com/aetherbloom" target="_blank" rel="noopener noreferrer">
-                Instagram
+                Facebook
               </a>
             </div>
           </div>
