@@ -2,9 +2,11 @@
 
 import { useState } from 'react'
 import styles from './Hero.module.css'
+import Image from 'next/image'
 
 export default function Hero() {
   const [isCalculatorModalOpen, setIsCalculatorModalOpen] = useState(false)
+  const [imageError, setImageError] = useState(false)
 
   const handleCalculatorClick = () => {
     setIsCalculatorModalOpen(true)
@@ -47,7 +49,7 @@ export default function Hero() {
           <div className={styles.heroContent}>
             <div className={styles.heroText}>
               <h1 className={styles.heroTitle}>
-                <span className={styles.heroTitleMain}>Elevate Your UK Business</span>
+                <span className={styles.heroTitleMain}>Elevate Your Business</span>
                 <span className={styles.heroTitleAccent}>with Strategic Outsourcing</span>
               </h1>
               
@@ -86,14 +88,33 @@ export default function Hero() {
               </div>
             </div>
           </div>
-          
+
           <div className={styles.heroVisual}>
+            <div className={styles.heroImageContainer}>
+              {!imageError ? (
+                <Image
+                  src="/hero-image.jpg" // Replace with your image path
+                  alt="Aetherbloom Business Outsourcing"
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  onError={() => setImageError(true)}
+                  priority
+                />
+              ) : (
+                <div className={styles.heroImagePlaceholder}>
+                  <div className={styles.imageOverlay}></div>
+                </div>
+              )}
+            </div>
+          </div>
+          
+          {/* <div className={styles.heroVisual}>
             <div className={styles.heroImageContainer}>
               <div className={styles.heroImagePlaceholder}>
                 <div className={styles.imageOverlay}></div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 

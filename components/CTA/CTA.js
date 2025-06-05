@@ -47,7 +47,7 @@ export default function CTA() {
             {/* Left Side - Main CTA */}
             <div className={styles.ctaLeft}>
               <h2 className={styles.ctaTitle}>
-                Ready to scale your UK business?
+                Ready to scale your business? <br/>
                 Start by seeing how our strategic outsourcing can assist you
               </h2>
               <p className={styles.ctaSubtitle}>
