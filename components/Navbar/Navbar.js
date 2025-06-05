@@ -145,7 +145,7 @@ export default function Navbar() {
           <Image
             src="/logo.webp"
             alt="Aetherbloom Logo"
-            width={120}
+            width={220}
             height={32}
             onError={handleLogoError}
             priority

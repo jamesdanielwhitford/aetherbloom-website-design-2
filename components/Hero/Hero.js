@@ -8,6 +8,10 @@ export default function Hero() {
   const [isCalculatorModalOpen, setIsCalculatorModalOpen] = useState(false)
   const [imageError, setImageError] = useState(false)
 
+  const handleImageError = () => {
+    setImageError(true)
+  }
+
   const handleCalculatorClick = () => {
     setIsCalculatorModalOpen(true)
   }
