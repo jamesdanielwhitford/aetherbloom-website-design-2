@@ -1,0 +1,261 @@
+/* File: styles/WhyAetherbloom.module.css */
+
+.whyAetherbloom {
+    padding: 120px 32px;
+    background-color: var(--background-white);
+    position: relative;
+}
+
+.whyContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.whyLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.whyLeft {
+    position: relative;
+}
+
+.whyRight {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.whyHeader {
+    margin-bottom: 0;
+}
+
+.whyTitle {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.whyTitleAccent {
+    color: var(--brand-primary);
+    font-style: italic;
+}
+
+.whySubtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+    max-width: 500px;
+}
+
+.whyFeatures {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.featuresRow {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.featureTag {
+    display: flex;
+    align-items: center;
+    padding: 16px 24px;
+    background-color: #f8f9fa;
+    border: 2px solid var(--border-light);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--text-medium);
+    white-space: nowrap;
+    min-height: 56px;
+}
+
+.featureTag:hover {
+    background-color: var(--brand-primary-lighter);
+    border-color: var(--brand-primary-light);
+    color: var(--brand-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(201, 100, 66, 0.15);
+}
+
+.featureTag.active {
+    background-color: var(--brand-primary);
+    border-color: var(--brand-primary);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 100, 66, 0.25);
+}
+
+.featureDetails {
+    position: relative;
+    min-height: 300px;
+}
+
+.detailCard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    background-color: #fafbfc;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: left;
+}
+
+.detailCard.active {
+    opacity: 1;
+    transform: translateY(0);
+    position: relative;
+}
+
+.detailCard h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    line-height: 1.3;
+}
+
+.detailCard p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .whyAetherbloom {
+        padding: 80px 20px;
+    }
+
+    .whyContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .whyLayout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .whyLeft {
+        order: 2;
+    }
+
+    .whyRight {
+        order: 1;
+        text-align: left;
+    }
+
+    .whyHeader {
+        margin-bottom: 0;
+    }
+
+    .whyTitle {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+
+    .whySubtitle {
+        font-size: 1.1rem;
+        max-width: none;
+    }
+
+    .whyFeatures {
+        margin-top: 40px;
+        order: 3;
+    }
+
+    .featuresRow {
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .featureTag {
+        padding: 12px 20px;
+        font-size: 14px;
+        min-height: 48px;
+    }
+
+    .featureDetails {
+        min-height: 300px;
+    }
+
+    .detailCard {
+        padding: 30px 20px;
+    }
+
+    .detailCard h3 {
+        font-size: 1.5rem;
+        margin-bottom: 12px;
+    }
+
+    .detailCard p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .whyAetherbloom {
+        padding: 60px 16px;
+    }
+
+    .whyContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .whyFeatures {
+        margin-top: 30px;
+    }
+
+    .whyTitle {
+        font-size: 2rem;
+    }
+
+    .whySubtitle {
+        font-size: 1rem;
+    }
+
+    .featuresRow {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .featureTag {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+
+    .detailCard {
+        padding: 24px 16px;
+    }
+
+    .detailCard h3 {
+        font-size: 1.3rem;
+    }
+
+    .detailCard p {
+        font-size: 0.95rem;
+    }
+}
