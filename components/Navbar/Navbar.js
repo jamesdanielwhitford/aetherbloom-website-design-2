@@ -1,4 +1,4 @@
-// File: components/Navbar.js
+// File: components/Navbar/Navbar.js
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
@@ -15,7 +15,7 @@ export default function Navbar() {
   const navLinks = [
     { href: '#home', label: 'Home' },
     { href: '#services', label: 'Services' },
-    { href: '#about', label: 'About' },
+    { href: '#pricing', label: 'Pricing' },
     { href: '#impact', label: 'Impact' },
     { href: '#contact', label: 'Contact' }
   ]

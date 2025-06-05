@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar/Navbar'
 import Hero from '../components/Hero/Hero'
 import WhyAetherbloom from '../components/WhyAetherbloom/WhyAetherbloom'
 import Services from '../components/Services/Services'
+import PricingCalculator from '../components/PricingCalculator/PricingCalculator'
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <Hero />
       <WhyAetherbloom />
       <Services />
+      <PricingCalculator />
     </>
   )
 }

@@ -1,0 +1,434 @@
+/* File: components/PricingCalculator/PricingCalculator.module.css */
+
+.pricingCalculator {
+    padding: 120px 32px;
+    background-color: var(--background-white);
+    position: relative;
+}
+
+.calculatorContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.calculatorLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.calculatorLeft {
+    position: relative;
+}
+
+.calculatorRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+
+.calculatorCard {
+    background: var(--background-white);
+    border-radius: 24px;
+    padding: 48px;
+    box-shadow: 0 20px 60px rgba(201, 100, 66, 0.08);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.calculatorCard:hover {
+    box-shadow: 0 25px 80px rgba(201, 100, 66, 0.12);
+    transform: translateY(-2px);
+}
+
+.calculatorForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.formSection {
+    text-align: left;
+}
+
+.formRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formLabel {
+    display: block;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.formInput,
+.formSelect {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid var(--border-light);
+    border-radius: 12px;
+    font-size: 16px;
+    color: var(--text-dark);
+    background: var(--background-white);
+    transition: all 0.2s ease;
+}
+
+.formInput:focus,
+.formSelect:focus {
+    outline: none;
+    border-color: var(--brand-primary);
+    box-shadow: 0 0 0 3px rgba(201, 100, 66, 0.1);
+}
+
+.formInput::placeholder {
+    color: var(--text-light);
+}
+
+.calculateButton {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+    color: white;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 16px;
+}
+
+.calculateButton:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(201, 100, 66, 0.3);
+}
+
+.calculateButton:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.calculatorFeatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 24px;
+    background: #fafbfc;
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+}
+
+.featureItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.featureIcon {
+    font-size: 1.1rem;
+    color: var(--brand-primary);
+    font-weight: bold;
+}
+
+.featureText {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-medium);
+    white-space: nowrap;
+}
+
+/* Right Side Content */
+.calculatorContent {
+    max-width: 500px;
+}
+
+.calculatorTitle {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.titleAccent {
+    color: var(--brand-primary);
+    font-style: italic;
+}
+
+.calculatorSubtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+}
+
+/* Results Section */
+.resultsSection {
+    width: 100%;
+    max-width: 500px;
+    animation: slideInLeft 0.6s ease;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.resultsHeader {
+    margin-bottom: 32px;
+}
+
+.resultsTitle {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.savingsHighlight {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.savingsAmount {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    line-height: 1;
+}
+
+.savingsPercentage {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--brand-primary-hover);
+    background: var(--brand-primary-lighter);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--brand-primary-light);
+}
+
+.resultsBreakdown {
+    margin-bottom: 32px;
+}
+
+.costComparison {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.costItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: #fafbfc;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+}
+
+.costLabel {
+    font-weight: 500;
+    color: var(--text-medium);
+    font-size: 0.95rem;
+}
+
+.costValue {
+    font-weight: 700;
+    color: var(--text-dark);
+    font-size: 1.1rem;
+}
+
+.resultsFooter {
+    text-align: left;
+}
+
+.resultsNote {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 24px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.resultsButtons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.getStartedButton {
+    background: var(--brand-primary);
+    color: white;
+    border: none;
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 180px;
+}
+
+.getStartedButton:hover {
+    background: var(--brand-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 100, 66, 0.25);
+}
+
+.recalculateButton {
+    background: transparent;
+    color: var(--text-medium);
+    border: 1px solid var(--border-light);
+    padding: 16px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recalculateButton:hover {
+    background: var(--text-dark);
+    color: var(--background-white);
+    border-color: var(--text-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(26, 26, 26, 0.15);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .pricingCalculator {
+        padding: 80px 20px;
+    }
+
+    .calculatorLayout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .calculatorLeft {
+        order: 2;
+    }
+
+    .calculatorRight {
+        order: 1;
+        text-align: left;
+    }
+
+    .calculatorCard {
+        padding: 32px 24px;
+        border-radius: 20px;
+    }
+
+    .formRow {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .calculatorTitle {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+
+    .calculatorSubtitle {
+        font-size: 1.1rem;
+    }
+
+    .formInput,
+    .formSelect {
+        padding: 14px 16px;
+        font-size: 16px;
+    }
+
+    .calculateButton {
+        padding: 18px 32px;
+        font-size: 16px;
+    }
+
+    .calculatorFeatures {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 20px;
+    }
+
+    .resultsTitle {
+        font-size: 1.8rem;
+    }
+
+    .savingsAmount {
+        font-size: 2.4rem;
+    }
+
+    .savingsPercentage {
+        font-size: 1.2rem;
+    }
+
+    .resultsButtons {
+        flex-direction: column;
+    }
+
+    .getStartedButton {
+        min-width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricingCalculator {
+        padding: 60px 16px;
+    }
+
+    .calculatorLayout {
+        gap: 40px;
+    }
+
+    .calculatorCard {
+        padding: 24px 20px;
+    }
+
+    .calculatorTitle {
+        font-size: 2rem;
+    }
+
+    .calculatorSubtitle {
+        font-size: 1rem;
+    }
+
+    .calculatorContent {
+        max-width: none;
+    }
+
+    .resultsSection {
+        max-width: none;
+    }
+
+    .savingsHighlight {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .savingsAmount {
+        font-size: 2rem;
+    }
+
+    .featureText {
+        font-size: 0.85rem;
+    }
+}
