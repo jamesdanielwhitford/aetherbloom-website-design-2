@@ -1,0 +1,315 @@
+/* File: components/Footer/Footer.module.css */
+
+.footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 80px 32px 40px;
+    position: relative;
+}
+
+.footerContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footerContent {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 80px;
+    margin-bottom: 60px;
+}
+
+/* Left Side - Brand */
+.footerBrand {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 300px;
+}
+
+.brandSection {
+    margin-bottom: 40px;
+}
+
+.textLogo {
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.brandTagline {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 20px 0 0 0;
+    max-width: 280px;
+}
+
+.ctaSection {
+    margin-top: auto;
+}
+
+.footerCta {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+    color: white;
+    border: none;
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.footerCta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 100, 66, 0.3);
+}
+
+/* Right Side - Navigation */
+.footerNav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+}
+
+.navColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.navTitle {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--brand-primary);
+    padding-bottom: 8px;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.navList li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    display: block;
+    padding: 4px 0;
+}
+
+.navList li a:hover {
+    color: white;
+    transform: translateX(4px);
+}
+
+/* Bottom Section */
+.footerBottom {
+    border-top: 1px solid #333;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.footerInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.contactInfo span {
+    white-space: nowrap;
+}
+
+.socialLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.socialLinks a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.socialLinks a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+.footerLegal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footerLegal p {
+    margin: 0;
+}
+
+.legalLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.legalLinks a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.legalLinks a:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .footer {
+        padding: 60px 20px 30px;
+    }
+
+    .footerContent {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-bottom: 40px;
+    }
+
+    .footerBrand {
+        min-height: auto;
+        text-align: center;
+    }
+
+    .brandTagline {
+        max-width: none;
+    }
+
+    .footerCta {
+        align-self: center;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .footerNav {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+
+    .navTitle {
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+
+    .navList {
+        gap: 10px;
+    }
+
+    .navList li a {
+        font-size: 0.9rem;
+    }
+
+    .footerInfo {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .contactInfo {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        text-align: center;
+    }
+
+    .footerLegal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+    }
+
+    .legalLinks {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 50px 16px 24px;
+    }
+
+    .footerContent {
+        gap: 40px;
+        margin-bottom: 32px;
+    }
+
+    .footerNav {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .navColumn {
+        text-align: center;
+    }
+
+    .footerBottom {
+        padding-top: 32px;
+        gap: 24px;
+    }
+
+    .contactInfo {
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+
+    .socialLinks {
+        gap: 12px;
+    }
+
+    .socialLinks a {
+        padding: 6px 10px;
+        font-size: 0.85rem;
+    }
+
+    .legalLinks {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+
+    .footerLegal {
+        font-size: 0.8rem;
+    }
+}
