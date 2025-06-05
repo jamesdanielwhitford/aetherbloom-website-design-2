@@ -1,0 +1,490 @@
+/* File: components/Testimonials/Testimonials.module.css */
+
+.testimonials {
+    padding: 120px 32px;
+    background-color: #fafbfc;
+    position: relative;
+}
+
+.testimonialsContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.testimonialsLayout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-bottom: 80px;
+}
+
+.testimonialsLeft {
+    position: relative;
+}
+
+.testimonialsRight {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 350px;
+}
+
+/* Left Side Content */
+.testimonialsContent {
+    max-width: 500px;
+}
+
+.testimonialsTitle {
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.titleAccent {
+    color: var(--brand-primary);
+    font-style: italic;
+}
+
+.testimonialsSubtitle {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    color: var(--text-medium);
+    margin-bottom: 40px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.statItem {
+    text-align: center;
+    padding: 20px 16px;
+    background: var(--background-white);
+    border-radius: 16px;
+    border: 1px solid var(--border-light);
+    transition: all 0.3s ease;
+}
+
+.statItem:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(201, 100, 66, 0.1);
+}
+
+.statNumber {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--brand-primary);
+    margin-bottom: 4px;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+/* Conversation Dots */
+.conversationDots {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--border-light);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: var(--brand-primary-light);
+    transform: scale(1.2);
+}
+
+.dot.activeDot {
+    background: var(--brand-primary);
+    transform: scale(1.2);
+}
+
+/* Right Side - Chat Area */
+.chatArea {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 20px;
+}
+
+.messageContainer {
+    display: flex;
+    flex-direction: column;
+    transition: all 0.6s ease;
+    position: relative;
+}
+
+.messageContainer.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.messageContainer.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideInMessage 0.6s ease;
+}
+
+@keyframes slideInMessage {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Aetherbloom Messages - Left Side */
+.messageContainer.aetherbloom {
+    align-items: flex-start;
+}
+
+.messageContainer.aetherbloom .speechBubble {
+    background: linear-gradient(135deg, var(--background-white) 0%, #f8f9fa 100%);
+    border: 2px solid var(--border-light);
+    color: var(--text-dark);
+    border-bottom-left-radius: 6px;
+    position: relative;
+}
+
+.messageContainer.aetherbloom .speechBubble::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--border-light);
+}
+
+.messageContainer.aetherbloom .speechBubble::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 21px;
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid #f8f9fa;
+}
+
+/* Client Messages - Right Side */
+.messageContainer.client {
+    align-items: flex-end;
+}
+
+.messageContainer.client .speechBubble {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-hover) 100%);
+    color: white;
+    border-bottom-right-radius: 6px;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(201, 100, 66, 0.2);
+}
+
+.messageContainer.client .speechBubble::before {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid var(--brand-primary-hover);
+}
+
+/* Speech Bubble */
+.speechBubble {
+    max-width: 320px;
+    padding: 18px 24px;
+    border-radius: 24px;
+    margin-bottom: 12px;
+    transition: all 0.3s ease;
+}
+
+.speechBubble:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201, 100, 66, 0.15);
+}
+
+.messageText {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Profile Section */
+.messageProfile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px;
+}
+
+.messageContainer.client .messageProfile {
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+}
+
+.profileAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--brand-primary-lighter) 0%, var(--brand-primary-light) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border: 2px solid var(--brand-primary-light);
+    flex-shrink: 0;
+}
+
+.profileInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.messageContainer.client .profileInfo {
+    text-align: right;
+}
+
+.profileName {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.profileCompany {
+    font-size: 0.8rem;
+    color: var(--text-medium);
+    line-height: 1.2;
+}
+
+/* Trusted Companies Section */
+.trustedSection {
+    text-align: center;
+    padding: 60px 0 0;
+    border-top: 1px solid var(--border-light);
+}
+
+.trustedLabel {
+    font-size: 1rem;
+    color: var(--text-medium);
+    margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.trustedCompanies {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+
+.companyLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 16px;
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.companyLogo:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+}
+
+.logoIcon {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.logoText {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-medium);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .testimonials {
+        padding: 80px 20px;
+    }
+
+    .testimonialsLayout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-bottom: 60px;
+    }
+
+    .testimonialsLeft {
+        order: 1;
+    }
+
+    .testimonialsRight {
+        order: 2;
+        min-height: 250px;
+    }
+
+    .testimonialsTitle {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+
+    .testimonialsSubtitle {
+        font-size: 1.1rem;
+        margin-bottom: 32px;
+    }
+
+    .statsGrid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 32px;
+    }
+
+    .statItem {
+        padding: 16px 12px;
+    }
+
+    .statNumber {
+        font-size: 1.5rem;
+    }
+
+    .statLabel {
+        font-size: 0.85rem;
+    }
+
+    .chatArea {
+        gap: 24px;
+        padding: 10px;
+        min-height: 220px;
+    }
+
+    .speechBubble {
+        max-width: 280px;
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+
+    .profileAvatar {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+
+    .profileName {
+        font-size: 0.85rem;
+    }
+
+    .profileCompany {
+        font-size: 0.75rem;
+    }
+
+    .trustedCompanies {
+        gap: 32px;
+    }
+
+    .companyLogo {
+        padding: 12px;
+    }
+
+    .logoIcon {
+        font-size: 1.5rem;
+    }
+
+    .logoText {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials {
+        padding: 60px 16px;
+    }
+
+    .testimonialsLayout {
+        gap: 40px;
+        margin-bottom: 50px;
+    }
+
+    .testimonialsTitle {
+        font-size: 2rem;
+    }
+
+    .testimonialsSubtitle {
+        font-size: 1rem;
+    }
+
+    .chatArea {
+        gap: 20px;
+        padding: 5px;
+        min-height: 180px;
+    }
+
+    .speechBubble {
+        max-width: 250px;
+        padding: 14px 18px;
+        font-size: 0.9rem;
+    }
+
+    .messageProfile {
+        gap: 10px;
+    }
+
+    .profileAvatar {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+    }
+
+    .trustedSection {
+        padding: 40px 0 0;
+    }
+
+    .trustedCompanies {
+        gap: 24px;
+    }
+
+    .statItem {
+        padding: 14px 10px;
+    }
+
+    .statNumber {
+        font-size: 1.3rem;
+    }
+}
